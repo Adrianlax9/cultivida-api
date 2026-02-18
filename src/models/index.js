@@ -1,13 +1,19 @@
 // src/models/index.js
 const { Sequelize, DataTypes } = require("sequelize");
-const config = require("../config/config");
+const config = require("../config/database");
 
 const sequelize = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config
+  {
+    host: config.host,
+    port: config.port,
+    dialect: config.dialect,
+    logging: false,
+  }
 );
+
 
 const db = {};
 
