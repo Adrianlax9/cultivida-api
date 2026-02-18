@@ -1,11 +1,13 @@
 require("dotenv").config();
 
-// Este objeto lo usa Sequelize para conectarse a MySQL
+// Configuración para Sequelize en Railway
 module.exports = {
-  username: process.env.DB_USER || "root",
-  password: process.env.DB_PASS || "",
-  database: process.env.DB_NAME || "cultivida",
-  host: process.env.DB_HOST || "127.0.0.1",
+  username: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  host: process.env.MYSQLHOST,
+  port: process.env.MYSQLPORT,
   dialect: "mysql",
   logging: false,
 };
+
